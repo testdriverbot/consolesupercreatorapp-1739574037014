@@ -1,0 +1,54 @@
+version: 4.2.12
+session: 67afcd394fc3867415940b82
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Navigate to the sign-up form.
+    commands:
+      - command: hover-text
+        text: Enter your Name
+        description: name input field in the sign-up form
+        action: click
+  - prompt: Fill in the sign-up form fields with valid test data.
+    commands:
+      - command: hover-text
+        text: Enter your Name
+        description: name input field in the sign-up form
+        action: click
+      - command: type
+        text: Test User
+      - command: hover-text
+        text: Your email
+        description: email input field in the sign-up form
+        action: click
+      - command: type
+        text: testuser@example.com
+      - command: hover-text
+        text: Create password
+        description: password input field in the sign-up form
+        action: click
+      - command: type
+        text: TestPassword123
+      - command: hover-text
+        text: I agree to the Terms of Use and Privacy Policy
+        description: terms and conditions checkbox
+        action: click
+      - command: scroll
+        direction: up
+        amount: 300
+  - prompt: Click the "Create Account" button.
+    commands:
+      - command: hover-text
+        text: Supercreator Console
+        description: tab to return to the sign-up form
+        action: click
+      - command: scroll-until-text
+        text: Create Account
+        direction: down
+        method: keyboard
+      - command: hover-text
+        text: Create Account
+        description: create account button on the sign-up form
+        action: click
