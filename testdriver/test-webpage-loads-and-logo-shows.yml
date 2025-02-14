@@ -1,0 +1,21 @@
+version: 4.2.12
+session: 67afcd264fc3867415940b72
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Navigate to the website's main page.
+    commands:
+      - command: hover-text
+        text: Supercreator
+        description: website logo at the top left of the page
+        action: click
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: the webpage displays the "Sign Up" form
+  - prompt: >-
+      Assert that the logo is visible on the page.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the logo "Supercreator" is visible on the page
